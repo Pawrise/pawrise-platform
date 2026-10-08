@@ -80,3 +80,11 @@ Plan d'implémentation **incrémental** de l'infrastructure et de l'outillage Pa
 
 Chaîne complète : `Développeur → GitHub → GitHub Actions (CI) → GHCR → Argo CD (GitOps) → Helm → Kubernetes (kubeadm) ← Ansible ← Terraform/OpenTofu → Hetzner`.
 Autour : Traefik · cert-manager · SOPS+age · step-ca. Observabilité : OpenTelemetry → Prometheus/Loki/Tempo → Grafana.
+
+---
+
+## Mise à jour — rétro de sprint
+
+- Sprint réalisé **sans planification formelle**, dans un contexte de **surcharge** (2 projets en parallèle + période en entreprise). Détails : [`reporting/RETRO.md`](../reporting/RETRO.md).
+- 💡 **Piste d'accélération infra** : l'équipe a un autre projet sur **Kubernetes**. Si le socle y est solide, le **réutiliser pour Pawrise** (charts Helm, config cluster) plutôt que repartir de zéro.
+- **Prochain chantier** : IaC (OpenTofu Hetzner) — en attente de la décision **compte Hetzner vs local k3d vs crédits Student Pack**.
