@@ -15,18 +15,20 @@ Plan d'implémentation **incrémental** de l'infrastructure et de l'outillage Pa
 - ✅ Organisation GitHub `Pawrise`
 - ✅ Repo `.github` : README, CONTRIBUTING, PR template, Issue Forms (bug/feature), conventions branches & commits
 - ✅ Protection de `main` sur `.github` (ruleset : PR + 1 approbation, threads résolus, pas de force-push/suppression ; bypass admin en mode `pull_request`)
-- ⏳ Rulesets sur les repos applicatifs — **bloqués par GitHub Free + repos privés**. Piste : **GitHub Education** (org en Team gratuitement). Sinon gate mou (convention « pas de merge en rouge »).
+- ✅ Rulesets sur **tous** les repos (PR + CI verte + review + pas de force-push/suppression ; bypass admin). Débloqué en **passant les repos publics**.
 
-## Phase 1 — CI (GitHub Actions) — *en cours*
-- ⏳ Reusable workflows centralisés dans `.github` : `secret-scan` (gitleaks), `python-ci` (auto-détecte uv/poetry/pip), `rust-ci`, `node-ci` — *PR #1*
-- ⬜ Brancher la CI sur `pawrise-data` → **premier pipeline vert**
-- ⬜ `secret-scan` activé sur **tous** les repos (même vides)
-- ⬜ Renommer `master` → `main` sur tous les repos (alignement conventions)
-- ⬜ Ajouter « CI verte obligatoire » aux rulesets (dépend de Team/Education)
+## Phase 1 — CI (GitHub Actions) — ✅ terminée
+- ✅ Reusable workflows centralisés dans `.github` : `secret-scan` (gitleaks), `python-ci` (auto-détecte uv/poetry/pip), `rust-ci`, `node-ci`, `self-ci` (actionlint)
+- ✅ CI branchée sur `pawrise-data` → pipeline vert
+- ✅ `secret-scan` activé sur **tous** les repos
+- ✅ Renommé `master` → `main` sur tous les repos
+- ✅ « CI verte obligatoire » dans les rulesets (check `secret-scan / gitleaks` requis)
+- ✅ Alertes **Discord** unifiées (échec + recovery) sur tous les repos
 
-## Phase 2 — Docker & Registry
-- ⬜ Dockerfiles par service (`pawrise-data` en a déjà un)
-- ⬜ CI phase 2 : sur merge `main` → build image + scan **Trivy** + push **GHCR**
+## Phase 2 — Docker & Registry — *amorcée*
+- ✅ Composant `docker-ci` prêt (hadolint → buildx multi-arch arm64 → **Trivy** → push **GHCR**)
+- ⬜ Dockerfile de l'**app** `pawrise-data` (a déjà celui de la BDD) — **en pause**
+- ⬜ Brancher `docker-ci` → premières images sur GHCR
 
 ## Phase 3 — Hébergement (version légère d'abord)
 > Avant Kubernetes : un seul VPS suffit longtemps pour une petite équipe.
@@ -70,7 +72,7 @@ Plan d'implémentation **incrémental** de l'infrastructure et de l'outillage Pa
 - **Modèle de branches** : GitHub Flow (`main` + branches `feature/*` courtes). **Pas** de `develop` / GitFlow — incompatible avec le déploiement continu GitOps. La séparation d'environnements se fait par config + Argo, pas par branches.
 - **CI centralisée** : reusable workflows dans `.github`, appelés par ~10 lignes dans chaque repo. Versioning par tag `@vN` quand les workflows deviennent critiques.
 - **`python-ci` agnostique** : auto-détecte uv/poetry/pip → aucune contrainte de gestionnaire imposée aux équipes.
-- **`.github` rendu public** pour débloquer la protection de branche gratuitement (contenu = conventions uniquement). Les repos applicatifs restent **privés** (protection IP > protection de branche tant qu'on est en Free).
+- **Tous les repos rendus publics** : la protection IP était théorique pour un projet école (pas de concurrent/plagiat réel) → passer public débloque **gratuitement** rulesets + org secrets + minutes Actions illimitées (au lieu de payer GitHub Team). secret-scan vérifié vert partout avant la bascule.
 - **Déploiement** : *build once, promote the same image* — la même image immuable traverse dev → staging → prod. La prod n'est **jamais** déployée automatiquement depuis `main` : promotion délibérée (tag de release `vX.Y.Z` ou PR de bump), c'est le garde-fou.
 - **Kubernetes** : cible de l'archi, mais pas prioritaire. Étape intermédiaire VPS + docker-compose d'abord.
 
@@ -85,6 +87,6 @@ Autour : Traefik · cert-manager · SOPS+age · step-ca. Observabilité : OpenTe
 
 ## Mise à jour — rétro de sprint
 
-- Sprint réalisé **sans planification formelle**, dans un contexte de **surcharge** (2 projets en parallèle + période en entreprise). Détails : [`reporting/RETRO.md`](../reporting/RETRO.md).
+- Sprint réalisé **sans planification formelle**, dans un contexte de **surcharge** (2 projets en parallèle + période en entreprise).
 - 💡 **Piste d'accélération infra** : l'équipe a un autre projet sur **Kubernetes**. Si le socle y est solide, le **réutiliser pour Pawrise** (charts Helm, config cluster) plutôt que repartir de zéro.
 - **Prochain chantier** : IaC (OpenTofu Hetzner) — en attente de la décision **compte Hetzner vs local k3d vs crédits Student Pack**.
