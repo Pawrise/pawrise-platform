@@ -30,10 +30,10 @@ Plan d'implémentation **incrémental** de l'infrastructure et de l'outillage Pa
 - ⬜ Dockerfile de l'**app** `pawrise-data` (a déjà celui de la BDD) — **en pause**
 - ⬜ Brancher `docker-ci` → premières images sur GHCR
 
-## Phase 3 — Hébergement (version légère d'abord)
-> Avant Kubernetes : un seul VPS suffit longtemps pour une petite équipe.
-- ⬜ 1 VPS **Hetzner** + `docker-compose` (images GHCR) + **Traefik** (reverse proxy + TLS Let's Encrypt) + **UptimeRobot** (monitoring uptime — cf AMDEC T01)
-- ⬜ **OpenTofu / Terraform** pour provisionner (⚠️ provider à trancher : **Hetzner** (archi) vs **Scaleway** (AMDEC) — RGPD OK les deux)
+## Phase 3 — Hébergement & IaC Hetzner — *amorcée*
+- ✅ **Début de l'IaC OpenTofu/Terraform** (`infra/hetzner/`) : control plane CAX21 + 2 workers CAX31 (ARM/EU), réseau privé, firewall (SSH/6443/80/443), clé SSH, output `ansible_inventory`. Validé en syntaxe — `apply` quand le compte Hetzner est prêt.
+- ⬜ `tofu apply` (provisionner le cluster) quand compte/token Hetzner prêts
+- ⬜ Décision : porter le socle **KUBE** (k8s direct) plutôt qu'un VPS léger — voir synergie projet KUBE
 
 ## Phase 4 — Kubernetes & GitOps *(quand la complexité le justifie vraiment)*
 - ⬜ Cluster **kubeadm** sur Hetzner, bootstrap via **Ansible**
