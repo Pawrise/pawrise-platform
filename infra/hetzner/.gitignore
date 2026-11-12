@@ -1,0 +1,7 @@
+# Etat Terraform et secrets — jamais dans Git
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+*.auto.tfvars
