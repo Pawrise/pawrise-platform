@@ -1,0 +1,4 @@
+# Copier en terraform.tfvars et remplir. NE PAS committer terraform.tfvars.
+hcloud_token   = "<ton-token-hetzner>"
+ssh_public_key = "ssh-ed25519 AAAA... ton@email"
+# location / types / worker_count : les defauts conviennent (voir variables.tf)
