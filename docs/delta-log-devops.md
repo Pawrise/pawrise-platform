@@ -1,8 +1,6 @@
 # Delta Log — DevOps (contributions d'Elarif)
 
-> Mes frictions DevOps rencontrées pendant le travail d'infra/CI, à **apporter au Delta Log
-> consolidé de l'équipe** (livrable équipe). Chaque entrée = écart entre la procédure prescrite
-> et la réalité d'exécution, + le correctif.
+> Mes frictions DevOps rencontrées pendant le travail d'infra/CI.
 >
 > Règle d'or : « If you have to adapt the procedure to make the test pass, the procedure has failed. »
 
