@@ -1,63 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="930" viewBox="0 0 1120 930" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
-  <rect width="1120" height="930" fill="#0f1310"/>
-  <!-- header -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="692" viewBox="0 0 1120 692" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <rect width="1120" height="692" fill="#0f1310"/>
   <text x="48" y="64" fill="#c6f24e" font-family="Menlo, monospace" font-size="13" letter-spacing="2">PAWRISE · DEVOPS</text>
   <text x="48" y="108" fill="#e9efe9" font-size="40" font-weight="700">Où j'en suis</text>
-  <text x="1072" y="64" fill="#6a746c" font-family="Menlo, monospace" font-size="13" text-anchor="end">12 nov. 2026</text>
+  <text x="1072" y="64" fill="#6a746c" font-family="Menlo, monospace" font-size="13" text-anchor="end">13 nov. 2026</text>
   <text x="48" y="140" fill="#9aa39c" font-size="15">Roadmap DevOps — statut des phases</text>
 
-  <!-- phase rows -->
-  <!-- row template: card + name + pill -->
   <g font-size="18">
-    <!-- 0 -->
     <rect x="48" y="172" width="1024" height="50" rx="10" fill="#161b17" stroke="#29312b"/>
-    <text x="76" y="204" fill="#e9efe9"><tspan fill="#6a746c" font-family="Menlo, monospace" font-size="13">P0 </tspan>Gouvernance &amp; conventions</text>
+    <text x="76" y="204" fill="#6a746c" font-family="Menlo, monospace" font-size="13">P0</text>
+    <text x="120" y="204" fill="#e9efe9">Gouvernance &amp; conventions</text>
     <rect x="928" y="185" width="120" height="24" rx="12" fill="#c6f24e"/>
     <text x="988" y="201" fill="#0f1310" font-family="Menlo, monospace" font-size="12" font-weight="700" text-anchor="middle">FAIT</text>
-    <!-- 1 -->
+
     <rect x="48" y="232" width="1024" height="50" rx="10" fill="#161b17" stroke="#29312b"/>
-    <text x="76" y="264" fill="#e9efe9"><tspan fill="#6a746c" font-family="Menlo, monospace" font-size="13">P1 </tspan>CI — GitHub Actions</text>
+    <text x="76" y="264" fill="#6a746c" font-family="Menlo, monospace" font-size="13">P1</text>
+    <text x="120" y="264" fill="#e9efe9">CI — GitHub Actions</text>
     <rect x="928" y="245" width="120" height="24" rx="12" fill="#c6f24e"/>
     <text x="988" y="261" fill="#0f1310" font-family="Menlo, monospace" font-size="12" font-weight="700" text-anchor="middle">FAIT</text>
-    <!-- 2 -->
+
     <rect x="48" y="292" width="1024" height="50" rx="10" fill="#161b17" stroke="#29312b"/>
-    <text x="76" y="324" fill="#e9efe9"><tspan fill="#6a746c" font-family="Menlo, monospace" font-size="13">P2 </tspan>Docker &amp; Registry</text>
+    <text x="76" y="324" fill="#6a746c" font-family="Menlo, monospace" font-size="13">P2</text>
+    <text x="120" y="324" fill="#e9efe9">Docker &amp; Registry</text>
     <rect x="928" y="305" width="120" height="24" rx="12" fill="#f4c351"/>
     <text x="988" y="321" fill="#0f1310" font-family="Menlo, monospace" font-size="12" font-weight="700" text-anchor="middle">AMORCÉ</text>
-    <!-- 3 (highlight) -->
-    <rect x="48" y="352" width="1024" height="50" rx="10" fill="#1c2417" stroke="#4e6a2a"/>
-    <text x="76" y="384" fill="#e9efe9"><tspan fill="#6a746c" font-family="Menlo, monospace" font-size="13">P3 </tspan>Hébergement &amp; IaC Hetzner <tspan fill="#c6f24e" font-size="14">★ nouveau</tspan></text>
+
+    <rect x="48" y="352" width="1024" height="50" rx="10" fill="#161b17" stroke="#29312b"/>
+    <text x="76" y="384" fill="#6a746c" font-family="Menlo, monospace" font-size="13">P3</text>
+    <text x="120" y="384" fill="#e9efe9">Hébergement &amp; IaC Hetzner</text>
     <rect x="928" y="365" width="120" height="24" rx="12" fill="#f4c351"/>
     <text x="988" y="381" fill="#0f1310" font-family="Menlo, monospace" font-size="12" font-weight="700" text-anchor="middle">AMORCÉ</text>
-    <!-- 4 -->
+
     <rect x="48" y="412" width="1024" height="50" rx="10" fill="#161b17" stroke="#29312b"/>
-    <text x="76" y="444" fill="#c9d1cb"><tspan fill="#6a746c" font-family="Menlo, monospace" font-size="13">P4 </tspan>Kubernetes &amp; GitOps</text>
+    <text x="76" y="444" fill="#6a746c" font-family="Menlo, monospace" font-size="13">P4</text>
+    <text x="120" y="444" fill="#c9d1cb">Kubernetes &amp; GitOps</text>
     <rect x="928" y="425" width="120" height="24" rx="12" fill="none" stroke="#3a4139"/>
     <text x="988" y="441" fill="#7b857d" font-family="Menlo, monospace" font-size="12" font-weight="700" text-anchor="middle">À FAIRE</text>
-    <!-- 5 -->
+
     <rect x="48" y="472" width="1024" height="50" rx="10" fill="#161b17" stroke="#29312b"/>
-    <text x="76" y="504" fill="#c9d1cb"><tspan fill="#6a746c" font-family="Menlo, monospace" font-size="13">P5 </tspan>Secrets, réseau, TLS</text>
+    <text x="76" y="504" fill="#6a746c" font-family="Menlo, monospace" font-size="13">P5</text>
+    <text x="120" y="504" fill="#c9d1cb">Secrets, réseau, TLS</text>
     <rect x="928" y="485" width="120" height="24" rx="12" fill="none" stroke="#3a4139"/>
     <text x="988" y="501" fill="#7b857d" font-family="Menlo, monospace" font-size="12" font-weight="700" text-anchor="middle">À FAIRE</text>
-    <!-- 6 -->
+
     <rect x="48" y="532" width="1024" height="50" rx="10" fill="#161b17" stroke="#29312b"/>
-    <text x="76" y="564" fill="#c9d1cb"><tspan fill="#6a746c" font-family="Menlo, monospace" font-size="13">P6 </tspan>Observabilité</text>
+    <text x="76" y="564" fill="#6a746c" font-family="Menlo, monospace" font-size="13">P6</text>
+    <text x="120" y="564" fill="#c9d1cb">Observabilité</text>
     <rect x="928" y="545" width="120" height="24" rx="12" fill="none" stroke="#3a4139"/>
     <text x="988" y="561" fill="#7b857d" font-family="Menlo, monospace" font-size="12" font-weight="700" text-anchor="middle">À FAIRE</text>
-    <!-- 7 -->
+
     <rect x="48" y="592" width="1024" height="50" rx="10" fill="#161b17" stroke="#29312b"/>
-    <text x="76" y="624" fill="#c9d1cb"><tspan fill="#6a746c" font-family="Menlo, monospace" font-size="13">P7 </tspan>Durcissement &amp; sécurité</text>
+    <text x="76" y="624" fill="#6a746c" font-family="Menlo, monospace" font-size="13">P7</text>
+    <text x="120" y="624" fill="#c9d1cb">Durcissement &amp; sécurité</text>
     <rect x="928" y="605" width="120" height="24" rx="12" fill="none" stroke="#3a4139"/>
     <text x="988" y="621" fill="#7b857d" font-family="Menlo, monospace" font-size="12" font-weight="700" text-anchor="middle">À FAIRE</text>
-  </g>
-
-  <!-- recently delivered -->
-  <rect x="48" y="678" width="1024" height="200" rx="12" fill="#13170f" stroke="#29312b"/>
-  <text x="72" y="712" fill="#c6f24e" font-family="Menlo, monospace" font-size="13" letter-spacing="1">RÉCEMMENT LIVRÉ</text>
-  <g font-size="16" fill="#d7ddd7">
-    <text x="72" y="750">›  Début de l'Infrastructure-as-Code Hetzner (OpenTofu/Terraform)</text>
-    <text x="72" y="784">›  Alerting CI Discord réparé sur les 9 dépôts (bug startup_failure)</text>
-    <text x="72" y="818">›  Nouveau dépôt auth intégré au standard CI/gouvernance</text>
-    <text x="72" y="852">›  CI mobile : build Android rendu obligatoire au merge</text>
   </g>
 </svg>
